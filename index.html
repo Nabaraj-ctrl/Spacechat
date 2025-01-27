@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to Chat App</h2>
+            <input type="text" id="username" placeholder="Enter your name">
+            <button onclick="login()">Start Chatting</button>
+        </div>
+    </div>
+
+    <!-- Chat Interface -->
+    <div id="chatInterface" class="hidden">
+        <div class="chat-container">
+            <div class="chat-header">
+                <button id="refreshButton">Refresh</button>
+                <h2>Chat Room</h2>
+                <span id="currentUser"></span>
+            </div>
+            <div class="chat-messages" id="messageArea">
+                <!-- Messages will be displayed here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+                <button onclick="startRecording()">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button onclick="sendMedia()">
+                    <i class="fas fa-image"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
